@@ -8,8 +8,8 @@ const port = 3000;
 // use cors
 const cors = require("cors");
 app.use(cors({
-  origin: "*",
-  credentials: true
+  origin: "*", // allow all origins
+  methods: "GET,POST,PUT,DELETE", // allow all methods
 }));
 
 app.use(express.json());
