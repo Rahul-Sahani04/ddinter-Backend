@@ -3,7 +3,7 @@ const { connectToDatabase } = require('../lib/mongodb');
 
 const router = express.Router();
 
-router.post('/interactions', async (req, res, next) => {
+router.post('/getInteraction', async (req, res, next) => {
   if (req.method === 'POST') {
     console.log('In POST API ROUTE');
     const { db } = await connectToDatabase();
@@ -50,7 +50,7 @@ router.post('/interactions', async (req, res, next) => {
   return res.status(400).json({ message: 'This route is not defined' });
 });
 
-router.post('/similar-drugs', async (req, res, next) => {
+router.post('/getSimilarDrugs', async (req, res, next) => {
 
     console.log('In POST API ROUTE', req.body);
     const { db } = await connectToDatabase();
